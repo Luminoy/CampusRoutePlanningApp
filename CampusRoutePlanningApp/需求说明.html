@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>校园导航需求说明</title>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div id="mainContent" style="width:70%;margin-left: auto;margin-right: auto";>
+        <h2>项目截止日期</h2>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" id="currentProgress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                60%
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">需求说明</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item"><input type="checkbox" />通过ArcGIS制作地图数据。地图中的对象要包含相关属性信息，如教学楼要包含名字、编号及其他属性等</li>
+                    <li class="list-group-item"><input type="checkbox" />地图数据显示。导入地图后，当点击对象或是鼠标滑过对象时显示对象相关属性，如鼠标滑过或点击教学楼1，显示其名字，编号等。</li>
+                    <li class="list-group-item"><input type="checkbox" />实现模拟导航。a）手动选取起止目标位置 b）起止点相关信息的显示 c）根据起止位置，生成可能的导航路径，并显示最优的三条路径信息&amp;按最短时间、最短距离、经过对象（建筑物）最多&amp;</li>
+                    <li class="list-group-item"><input type="checkbox" />能够设置中断，当中断发生后以中断位置作为起点重新规划导航。如在路口A发生事故，则以A为起点重新开始导航，并提示相关信息</li>
+                    <li class="list-group-item"><input type="checkbox" />验收标准 1.完成相关功能 2.提交相关的源代码 3.在我这边部署调试并运行成功 4.有一个简单的功能说明文档和操作说明 5.一份详细设计文档
+</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        var current = new Date();
+        var dest = new Date(2016, 10, 30);
+        var diff = dest.getDate() - current.getDate();
+        var percent = (30 - diff) / 30 * 100;
+        percent = percent.toFixed(2);
+        $("#currentProgress").attr("aria-valuenow", percent).css("width", percent + '%');
+        $("#currentProgress").html(percent + "%");
+    </script>
+</body>
+</html>
