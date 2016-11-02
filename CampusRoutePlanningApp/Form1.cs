@@ -17,6 +17,7 @@ namespace CampusRoutePlanningApp
     {
         private FeatureLayer campusLayer;
         private KryptonRibbonGroupButton lastButton;
+        private double[,] roadmaps;
         public Form1()
         {
             InitializeComponent();
